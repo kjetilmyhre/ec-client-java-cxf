@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.xml.ws.BindingProvider;
+import java.util.List;
 import java.util.Properties;
 
 public class IntermediaryInboundExternalEC2Client {
@@ -28,11 +29,12 @@ public class IntermediaryInboundExternalEC2Client {
     }
 
     protected ReceiptExternalBE sendFormTaskShipment(String reportee, String externalShipmentReference, String serviceCode,
-                                                     int serviceEdition, String dataFormatId, int dataFormatVersion, String endUserSystemReference, String formData) throws IIntermediaryInboundExternalEC2SubmitFormTaskECAltinnFaultFaultFaultMessage {
+                                                     int serviceEdition, String dataFormatId, int dataFormatVersion, String endUserSystemReference, String formData,
+                                                     List<Attachment> attachments) throws IIntermediaryInboundExternalEC2SubmitFormTaskECAltinnFaultFaultFaultMessage {
 
         return intermediaryInboundExternalEC2.submitFormTaskEC(credentials.getVirksomhetsbruker(), credentials.getVirksomhetsbrukerPassord(),
-                getFormTaskShipmentBE(reportee, externalShipmentReference, serviceCode, serviceEdition, dataFormatId, dataFormatVersion, endUserSystemReference, formData));
-                                                        
+                getFormTaskShipmentBE(reportee, externalShipmentReference, serviceCode, serviceEdition, dataFormatId, dataFormatVersion, endUserSystemReference, formData, attachments));
+
     }
 
     private IIntermediaryInboundExternalEC2 getIntermediaryInboundClient(Properties signatureProperties) {
@@ -52,12 +54,30 @@ public class IntermediaryInboundExternalEC2Client {
 
     private FormTaskShipmentBE getFormTaskShipmentBE(String reportee, String externalShipmentReference, String serviceCode,
                                                      int serviceEdition, String dataFormatId, int dataFormatVersion, String endUserSystemReference, String formData) {
+        return getFormTaskShipmentBE(reportee, externalShipmentReference, serviceCode, serviceEdition, dataFormatId, dataFormatVersion, endUserSystemReference, formData, null);
+    }
+
+    private FormTaskShipmentBE getFormTaskShipmentBE(String reportee, String externalShipmentReference, String serviceCode,
+                                                     int serviceEdition, String dataFormatId, int dataFormatVersion, String endUserSystemReference, String formData, List<Attachment> attachments) {
 
         FormTaskShipmentBE formTaskShipmentBE = objectFactory.createFormTaskShipmentBE();
         formTaskShipmentBE.setReportee(reportee);
         formTaskShipmentBE.setExternalShipmentReference(externalShipmentReference);
         formTaskShipmentBE.setFormTasks(getFormTask(serviceCode, serviceEdition, dataFormatId, dataFormatVersion, endUserSystemReference, formData));
+        if (attachments != null) {
+            formTaskShipmentBE.setAttachments(getArrayOfAttachment(attachments));
+        }
         return formTaskShipmentBE;
+    }
+
+    public Attachment getEmptyAttachment(){
+        return objectFactory.createAttachment();
+    }
+
+    private ArrayOfAttachment getArrayOfAttachment(List<Attachment> attachments) {
+        ArrayOfAttachment arrayOfAttachment = objectFactory.createArrayOfAttachment();
+        arrayOfAttachment.getAttachment().addAll(attachments);
+        return arrayOfAttachment;
     }
 
     private FormTask getFormTask(String serviceCode, int serviceEdition, String dataFormatId, int dataFormatVersion, String endUserSystemReference, String formData) {
@@ -80,6 +100,7 @@ public class IntermediaryInboundExternalEC2Client {
         form.setDataFormatVersion(dataFormatVersion);
         form.setEndUserSystemReference(endUserSystemReference);
         form.setFormData(formData);
+        form.setCompleted(true);
         return form;
     }
 }
