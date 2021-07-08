@@ -1,31 +1,31 @@
 <Skjema skjemanummer="1548" spesifikasjonsnummer="12174" blankettnummer="RF-1211" tittel="Skattekort" gruppeid="9333" etatid="974761076">
     <!--Optional:-->
     <Innsenderinformasjon-grp-9334 gruppeid="9334">
-        <!--Optional:-->
-        <RapporteringsenhetOrganisasjonsnummer-datadef-21772 orid="21772">stringstr</RapporteringsenhetOrganisasjonsnummer-datadef-21772>
-        <!--Optional:-->
+
+        <RapporteringsenhetOrganisasjonsnummer-datadef-21772 orid="21772">988343773</RapporteringsenhetOrganisasjonsnummer-datadef-21772>
+
         <RapporteringsenhetNavn-datadef-21771 orid="21771">Gjensidige Pensjonsforsikring</RapporteringsenhetNavn-datadef-21771>
-        <!--Optional:-->
-        <SprakSprakprofilAltinn-datadef-34851 orid="34851">2068</SprakSprakprofilAltinn-datadef-34851>
+
+        <SprakSprakprofilAltinn-datadef-34851 orid="34851">1033</SprakSprakprofilAltinn-datadef-34851>
     </Innsenderinformasjon-grp-9334>
-    <!--Optional:-->
+
     <Kontaktinformasjon-grp-9926 gruppeid="9926">
-        <!--Optional:-->
+
         <KontaktpersonMobiltelefonnummer-datadef-34815 orid="34815">97079744</KontaktpersonMobiltelefonnummer-datadef-34815>
-        <!--Optional:-->
+
         <KontaktpersonEPost-datadef-34490 orid="34490">kjetil.myhre@gjensidige.no</KontaktpersonEPost-datadef-34490>
     </Kontaktinformasjon-grp-9926>
-    <!--Optional:-->
+
     <Foresporsel-grp-9338 gruppeid="9338">
-        <!--Optional:-->
-        <SkattekortVarslingstype-datadef-34847 orid="34847">1</SkattekortVarslingstype-datadef-34847>
-        <!--Optional:-->
-        <SkattekortMeldingstype-datadef-34848 orid="34848">1</SkattekortMeldingstype-datadef-34848>
-        <!--Optional:-->
+
+        <SkattekortVarslingstype-datadef-34847 orid="34847">3</SkattekortVarslingstype-datadef-34847> <!-- 1=varsel ved endringer, 3=ingen varsel-->
+
+        <SkattekortMeldingstype-datadef-34848 orid="34848">2</SkattekortMeldingstype-datadef-34848>
+
         <SkattekortAr-datadef-34849 orid="34849">2021</SkattekortAr-datadef-34849>
-        <!--Optional:-->
+
         <SkattekortHenteEndredeSkattekort-datadef-37134 orid="37134">SidenDato</SkattekortHenteEndredeSkattekort-datadef-37134>
-        <!--Optional:-->
+
         <SkattekortHenteEndredeSkattekortFraDato-datadef-37135 orid="37135">2021-03-08</SkattekortHenteEndredeSkattekortFraDato-datadef-37135>
     </Foresporsel-grp-9338>
 </Skjema>
