@@ -1,0 +1,46 @@
+<urn:melding xmlns:urn="urn:ske:fastsetting:innsamling:a-meldingen:v2_2">
+    <urn:Leveranse>
+        <urn:leveringstidspunkt>2021-04-09T03:49:45</urn:leveringstidspunkt>
+        <urn:kalendermaaned>2021-03</urn:kalendermaaned>
+        <urn:kildesystem>Gjensidige-TEST</urn:kildesystem>
+        <!--Optional:-->
+        <urn:meldingsId>abc123</urn:meldingsId>
+        <urn:opplysningspliktig>
+            <urn:norskIdentifikator>810514442</urn:norskIdentifikator>
+        </urn:opplysningspliktig>
+        <urn:oppgave>
+            <!--Optional:-->
+            <urn:betalingsinformasjon>
+                <!--Optional:-->
+                <urn:sumForskuddstrekk>100</urn:sumForskuddstrekk>
+                <!--Optional:-->
+                <urn:sumArbeidsgiveravgift>100</urn:sumArbeidsgiveravgift>
+            </urn:betalingsinformasjon>
+
+            <!--Zero or more repetitions:-->
+            <urn:virksomhet>
+                <urn:norskIdentifikator>810514442</urn:norskIdentifikator>
+                <!--Zero or more repetitions:-->
+                <urn:inntektsmottaker>
+                    <!--Optional:-->
+                    <urn:norskIdentifikator>30055408455</urn:norskIdentifikator>
+                    <urn:arbeidsforhold>
+                        <!--Optional:-->
+                        <urn:arbeidsforholdId>Test</urn:arbeidsforholdId>
+                        <urn:typeArbeidsforhold>Test</urn:typeArbeidsforhold>
+
+                        <urn:antallTimerPerUkeSomEnFullStillingTilsvarer>37.5</urn:antallTimerPerUkeSomEnFullStillingTilsvarer>
+
+                    </urn:arbeidsforhold>
+                </urn:inntektsmottaker>
+
+            </urn:virksomhet>
+            <!--Zero or more repetitions:-->
+            <urn:pensjonsinnretning>
+                <urn:identifikator>Gjensidige</urn:identifikator>
+            </urn:pensjonsinnretning>
+        </urn:oppgave>
+        <!--Optional:-->
+        <urn:spraakForTilbakemelding>engelsk</urn:spraakForTilbakemelding>
+    </urn:Leveranse>
+</urn:melding>

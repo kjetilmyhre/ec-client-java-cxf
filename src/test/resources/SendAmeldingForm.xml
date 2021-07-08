@@ -1,0 +1,14 @@
+<melding dataFormatProvider="SERES" dataFormatId="4166" dataFormatVersion="35895">
+  <InformasjonOmInnsender>
+    <!--Optional:-->
+    <innsender>
+      <norskIdentifikator>810514442</norskIdentifikator>
+    </innsender>
+  </InformasjonOmInnsender>
+  <InnsendtInformasjon>
+    <innsending>
+      <meldingsId>abc123</meldingsId>
+      <kalendermaaned>2021-03</kalendermaaned>
+    </innsending>
+  </InnsendtInformasjon>
+</melding>
